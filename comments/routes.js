@@ -3,7 +3,7 @@ const Comment = require('./model')
 
 const router = new Router()
 
-  router.post('/comments', (req, res, next) => {
+  router.post('adverts/:id/comments', (req, res, next) => {
     Comment
       .create(req.body)
       .then(comment => {

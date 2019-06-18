@@ -1,5 +1,6 @@
 const Sequelize = require('../node_modules/sequelize')
 const sequelize = require('../db')
+const Advert = require('../adverts/model')
 
 const Comment = sequelize.define('comments', {
     text: {
@@ -7,11 +8,6 @@ const Comment = sequelize.define('comments', {
         field: 'text',
         allowNull: false
     },
-    author: {
-        type: Sequelize.TEXT,
-        field: 'author',
-        allowNull: false
-    }
   })
-
+Comment.belongsTo(Advert)
   module.exports = Comment
