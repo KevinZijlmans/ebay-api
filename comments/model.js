@@ -9,5 +9,4 @@ const Comment = sequelize.define('comments', {
         allowNull: false
     },
   })
-Comment.belongsTo(Advert)
   module.exports = Comment

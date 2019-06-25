@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../db')
+const Comment = require('../comments/model')
 
 const Advert = sequelize.define('adverts', {
     title: {
@@ -33,5 +34,6 @@ const Advert = sequelize.define('adverts', {
         allowNull: false
     }
   })
+  Advert.hasMany(Comment)
   
   module.exports = Advert
