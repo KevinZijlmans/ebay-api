@@ -29,8 +29,8 @@ router.get('/adverts', (req, res, next) => {
           })
         }
         advert.getComments()
-         .then(tickets => {
-           res.send({...advert.dataValues, tickets})
+         .then(adverts => {
+           res.send({...advert.dataValues, adverts})
          })
       })
       .catch(error => next(error))
