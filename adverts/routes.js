@@ -28,7 +28,10 @@ router.get('/adverts', (req, res, next) => {
             message: `advert does not exist`
           })
         }
-        return res.send(advert)
+        advert.getComments()
+         .then(tickets => {
+           res.send({...advert.dataValues, tickets})
+         })
       })
       .catch(error => next(error))
   })
