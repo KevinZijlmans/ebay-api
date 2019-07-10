@@ -3,7 +3,7 @@ const Comment = require('./model')
 
 const router = new Router()
 
-  router.post('/adverts/:id/comments', (req, res, next) => {
+  router.post('/comments', (req, res, next) => {
     const text = req.body.text
     const advertId = req.params.id
 
